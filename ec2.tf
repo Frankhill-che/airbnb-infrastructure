@@ -3,6 +3,9 @@ resource "aws_instance" "web" {
   instance_type = var.INSTANCE_TYPE
   ebs_optimized = true
   monitoring = true
+  root_block_device {
+  encrypted     = true
+  }
   tags = {
     Name = "airbnb-web-server1"
   }
